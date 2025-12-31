@@ -1,5 +1,5 @@
 import * as catalogService from './catalog.service';
-import { CatalogMatchResponse, InspectionStage } from '@inspeccion/shared';
+import { CatalogMatchResponse, InspectionStage } from '../types';
 
 /**
  * Servicio de matching de texto con el catálogo.

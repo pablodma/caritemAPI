@@ -1,5 +1,5 @@
 import supabase from '../config/supabase';
-import { CatalogItem, CatalogPosition, CatalogDamageType, CatalogSeverity } from '@inspeccion/shared';
+import { CatalogItem, CatalogPosition, CatalogDamageType, CatalogSeverity } from '../types';
 
 // ==========================================
 // ITEMS
