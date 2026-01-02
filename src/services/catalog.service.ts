@@ -252,3 +252,21 @@ export const deleteSeverity = async (id: string): Promise<void> => {
   if (error) throw error;
 };
 
+// ==========================================
+// CATEGORIES (distinct from items)
+// ==========================================
+
+export const getCategories = async (): Promise<string[]> => {
+  const { data, error } = await supabase
+    .from('catalog_items')
+    .select('category')
+    .not('category', 'is', null)
+    .order('category');
+  
+  if (error) throw error;
+  
+  // Get unique categories
+  const uniqueCategories = [...new Set(data?.map(item => item.category).filter(Boolean) || [])];
+  return uniqueCategories as string[];
+};
+

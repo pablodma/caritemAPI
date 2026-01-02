@@ -296,3 +296,16 @@ export const getAllCatalog = async (req: Request, res: Response) => {
   }
 };
 
+// ==========================================
+// CATEGORIES
+// ==========================================
+
+export const getCategories = async (req: Request, res: Response) => {
+  try {
+    const categories = await catalogService.getCategories();
+    res.json({ success: true, data: categories });
+  } catch (error: any) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+};
+

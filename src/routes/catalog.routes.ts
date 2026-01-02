@@ -42,5 +42,8 @@ router.post('/import', upload.single('file'), catalogController.importFromExcel)
 // Get all catalog data (for frontend caching)
 router.get('/all', catalogController.getAllCatalog);
 
+// Categories (distinct values from items)
+router.get('/categories', catalogController.getCategories);
+
 export default router;
 
